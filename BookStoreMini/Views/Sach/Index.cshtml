@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<BookStoreMini.Models.Sach>
+
+@{
+    ViewBag.Title = "Danh sách sách";
+}
+
+<h2>Danh sách sách</h2>
+
+@if (!Model.Any())
+{
+    <p>Chưa có sách thuộc thể loại này</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                @Html.Partial("_SachItem", item)
+            </div>
+        }
+    </div>
+}
+
+@section banner {
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Chào mừng đến với BookStore Mini</h2>
+        </div>
+    </div>
+}

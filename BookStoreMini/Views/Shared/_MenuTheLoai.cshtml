@@ -1,0 +1,20 @@
+﻿
+@model IEnumerable<BookStoreMini.Models.TheLoai>
+
+<h4>Danh mục thể loại</h4>
+
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Index", "Sach",
+                  new { maTL = item.MaTL })"
+           class="list-group-item">
+
+            @item.TenTL
+
+            <span class="badge">
+                @item.Saches.Count
+            </span>
+        </a>
+    }
+</div>

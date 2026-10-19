@@ -1,0 +1,26 @@
+﻿
+@model BookStoreMini.Models.Sach
+
+<div class="thumbnail">
+    <div class="caption">
+        <h4>@Model.TenSach</h4>
+
+        <p>Tác giả: @Model.TacGia</p>
+
+        <p>Thể loại: @Model.TheLoai.TenTL</p>
+
+        <p>
+            <strong>
+                @Model.GiaBan.ToString("#,##0") đ
+            </strong>
+        </p>
+
+        @Html.ActionLink(
+            "Xem chi tiết",
+            "Details",
+            "Sach",
+            new { id = Model.MaSach },
+            new { @class = "btn btn-primary" }
+        )
+    </div>
+</div>

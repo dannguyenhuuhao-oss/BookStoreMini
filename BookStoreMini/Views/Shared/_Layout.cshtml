@@ -1,0 +1,36 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - BookStore Mini</title>
+</head>
+<body>
+    <header>
+        <h1>BookStore Mini</h1>
+
+        @Html.ActionLink("Trang chủ", "Index", "Home") |
+        @Html.ActionLink("Sách", "Index", "Sach") |
+        @Html.ActionLink("Liên hệ", "Contact", "Home")
+    </header>
+
+    @RenderSection("banner", required: false)
+
+    <div style="display:flex; gap:20px;">
+        <aside style="width:25%;">
+            @Html.Action("MenuTheLoai", "Sach")
+        </aside>
+
+        <main style="width:75%;">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - BookStore Mini - Nguyễn Hữu Hạo Dân</p>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
